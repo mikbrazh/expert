@@ -1,4 +1,4 @@
-@function em($pixels, $context: $browser-context)
+@function em($pixels, $context: $default-browser-font-size)
   @if (unitless($pixels))
     $pixels: $pixels * 1px;
 
