@@ -1,4 +1,7 @@
+@import "bootstrap-custom-grid"
+@import "../libs/bootstrap-5.2.3/scss/bootstrap-grid"
 @import "_mixins/emizer"
+@import "media"
 @import "fonts"
 @import "vars"
 
@@ -10,6 +13,9 @@ h1, h2, h3, h4, h5, h6
 p
   padding: 0
   margin: 0
+
+a
+  text-decoration: none
 
 button
   padding: 0
@@ -24,6 +30,9 @@ button
 ::selection
   color: $accent
   background-color: $vulcan
+
+.display-none
+  display: none
 
 // body
 //   position: relative
@@ -43,9 +52,6 @@ button
 // b, strong
 //   font-weight: bold
 
-// a:hover
-//   text-decoration: none
-
 // ul
 //   margin: 0
 //   padding: 0
@@ -53,6 +59,3 @@ button
 
 // Кастомный SASS
 @import "_sections/_report-section.sass"
-
-// Медиа (всегда в конце)
-// @import "media"

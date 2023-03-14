@@ -1,5 +1,6 @@
 .reports-section
   padding-top: 140px
+  background-color: $milk
 
 .reports-section .header-block
   margin-bottom: 87px
@@ -49,12 +50,10 @@
 .button-block
   margin-bottom: 64px
 
-$padRight: 32px // Также в .buttons__button--smile-icon
-.buttons__button
+$padRight: 32px // Используется повторно
+.button
   position: relative
   padding: 16px $padRight 16px 32px
-  margin-right: 12px
-  margin-bottom: 12px
 
   font-family: $Mulish500
   font-weight: 500
@@ -63,7 +62,12 @@ $padRight: 32px // Также в .buttons__button--smile-icon
   cursor: pointer
   transition: $buttons
 
-.buttons__button--primary-active
+.reports-section .button-group .button
+  margin-right: 12px
+  &:first-child
+    margin-bottom: 12px
+
+.button--primary-active
   color: $milk
   border: 1px solid $accent
   background-color: $accent
@@ -75,13 +79,13 @@ $padRight: 32px // Также в .buttons__button--smile-icon
     background-color: transparent
     color: $vulcan
 
-.buttons__button--primary-inactive
+.button--primary-inactive
   border: 1px solid $darkGrey
   background-color: $darkGrey
   color: $milk
   cursor: auto
 
-.buttons__button--tag-active
+.button--tag-active
   border: 1px solid $grey
   background-color: transparent
   color: $accent
@@ -92,10 +96,10 @@ $padRight: 32px // Также в .buttons__button--smile-icon
     background-color: $accent
     border: 1px solid $accent
 
-.buttons__button--tag-inactive
+.button--tag-inactive
   display: none
 
-.buttons__button--smile-icon
+.button--smile-icon
   padding-right: calc(#{$padRight} + 24px)
   &:after
     content: ''
@@ -117,3 +121,40 @@ $padRight: 32px // Также в .buttons__button--smile-icon
     // background-image: url(../img/svg/smile-icon--milk.svg)
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzE0XzIyMDApIj4KPHBhdGggZD0iTTE4LjMxMDkgMTQuMjMwMUMxNy45Mjk5IDE0LjA1OTUgMTcuNDg4NSAxNC4yMzE2IDE3LjMyMDUgMTQuNjA5NkMxNy4zMDUxIDE0LjY0MyAxNS43NzA2IDE3Ljk4OTUgMTEuOTQzIDE4LjAzNDVDMTEuOTE5NCAxOC4wMzQ1IDExLjg5NjEgMTguMDM1MyAxMS44NzI1IDE4LjAzNTNDOC4yNzEwMiAxOC4wMzUzIDYuNzE3NzUgMTQuNzQ1NCA2LjY1MzI3IDE0LjYwNEM2LjQ4MTkyIDE0LjIyOSA2LjAzOTQyIDE0LjA2MjEgNS42NjE0MiAxNC4yMzJDNS4yODQxNyAxNC40MDI2IDUuMTE2NTUgMTQuODQ2MyA1LjI4NzE3IDE1LjIyNDJDNS4zNjcwNSAxNS40MDE2IDcuMjg4MTcgMTkuNTM1MyAxMS44Njk1IDE5LjUzNTNDMTEuODk5NSAxOS41MzUzIDExLjkzMDMgMTkuNTM0NSAxMS45NjAzIDE5LjUzNDVDMTYuNzM4NSAxOS40NzgzIDE4LjYxMjggMTUuMzk0MSAxOC42ODk3IDE1LjIyMDVDMTguODU5NSAxNC44NDE4IDE4LjY4ODkgMTQuMzk4NSAxOC4zMTA5IDE0LjIzMDFMMTguMzEwOSAxNC4yMzAxWk0xMiAwQzUuMzcyMjUgMCAwIDUuMzcyMjUgMCAxMkMwIDE4LjYyNzcgNS4zNzIyNSAyNCAxMiAyNEMxOC42Mjc3IDI0IDI0IDE4LjYyNzcgMjQgMTJDMjQgNS4zNzIyNSAxOC42Mjc3IDAgMTIgMFYwWk0xMiAyMi41QzYuMjEwMzcgMjIuNSAxLjUgMTcuNzg5NiAxLjUgMTJDMS41IDYuMjEwMzcgNi4yMTAzNyAxLjUgMTIgMS41QzE3Ljc4OTYgMS41IDIyLjUgNi4yMTAzNyAyMi41IDEyQzIyLjUgMTcuNzg5NiAxNy43ODk2IDIyLjUgMTIgMjIuNVpNOC4yMzgzNyAxMS4yNDU5QzkuMDY0ODcgMTEuMjQ1OSA5LjczNDYyIDEwLjU3NTcgOS43MzQ2MiA5Ljc1QzkuNzM0NjIgOC45MjQyNSA5LjA2NDg3IDguMjU0MTIgOC4yMzgzNyA4LjI1NDEyQzcuNDExNSA4LjI1NDEyIDYuNzQyMTMgOC45MjQyMyA2Ljc0MjEzIDkuNzVDNi43NDIxMyAxMC41NzU4IDcuNDExNSAxMS4yNDU5IDguMjM4MzcgMTEuMjQ1OVYxMS4yNDU5Wk0xNS43Mzg0IDExLjI0NTlDMTYuNTY0OSAxMS4yNDU5IDE3LjIzNDYgMTAuNTc1NyAxNy4yMzQ2IDkuNzVDMTcuMjM0NiA4LjkyNDI1IDE2LjU2NDkgOC4yNTQxMiAxNS43Mzg0IDguMjU0MTJDMTQuOTExNSA4LjI1NDEyIDE0LjI0MjEgOC45MjQyMyAxNC4yNDIxIDkuNzVDMTQuMjQyMSAxMC41NzU4IDE0LjkxMTUgMTEuMjQ1OSAxNS43Mzg0IDExLjI0NTlaIiBmaWxsPSIjRjdGN0Y4Ii8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfMTRfMjIwMCI+CjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K)
      
+.button--arrow-icon
+  padding-right: calc(#{$padRight} + 24px)
+  &:after
+    content: ''
+    position: absolute
+    bottom: 50%
+    right: 24px
+    transform: translateY(50%)
+    width: 24px
+    height: 24px
+
+    // background-image: url(../img/svg/arrow-icon--accent.svg)
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuNSAxMi41SDI0LjVNMjQuNSAxMi41TDE5LjUgOE0yNC41IDEyLjVMMTkuNSAxNyIgc3Ryb2tlPSIjRkYxNjE2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
+
+    transition: $buttons
+  &:active:after
+    // background-image: url(../img/svg/arrow-icon--milk.svg)
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAuNSAxMi41SDI0LjVNMjQuNSAxMi41TDE5LjUgOE0yNC41IDEyLjVMMTkuNSAxNyIgc3Ryb2tlPSIjRjdGN0Y4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+
+.carousel-block
+  margin-bottom: 64px
+  text-align: center
+  background: #c0c0c0
+
+.reports-section .view-reports-wrapper
+  text-align: right
+
+.view-reports
+  display: inline-block
+  margin-right: 40px
+
++media-breakpoint-down(xxl)
+  .reports-section
+    background-color: tomato
