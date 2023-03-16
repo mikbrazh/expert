@@ -3,37 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>Expert</title>
   <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-<div class="container">
-  <main>
-    <section class="reports-section">
+<body">
+<main>
+  <section class="reports-section">
+    <div class="container">
       <header class="header-block">
         <div class="row">
-          <div class="col-8">
+          <div class="col-xxl-8 order-2 order-xxl-1">
             <h2 class="title">Примеры наших отчетов</h2>
           </div>
-          <div class="col-4">
+          <div class="col-xxl-4 order-1 order-xxl-2">
             <p class="descriptor">Объективная проверка</p>
           </div>
         </div>
       </header>
       <div class="text-block">
         <div class="row">
-          <div class="col-7">
-            <strong class="subtitle">Наши клиенты получают точную информацию о машине,<br> которую они хотят приобрести: будь это семейный<br> автомобиль, служебное авто или просто замена прежнего<br> транспортного средства - мы позаботимся, чтобы у вас<br> была полная информация о её реальном состоянии.</strong>
+          <div class="col-xxl-7">
+            <strong class="subtitle">Наши клиенты получают точную информацию о машине,<br class="d-sm-none d-xxl-block"> которую они хотят приобрести: будь это семейный<br class="d-sm-none d-xxl-block"> автомобиль, служебное авто или просто замена прежнего<br class="d-sm-none d-xxl-block"> транспортного средства - мы позаботимся, чтобы у вас<br class="d-sm-none d-xxl-block"> была полная информация о её реальном состоянии.</strong>
           </div>
-          <div class="col-5">
-            <p class="text">Ниже можно ознакомиться с некоторыми отчётами по проверенным<br> нами авто. Для удобства мы разбили эти примеры по категориям<br> и в каждой разместили наиболее интересные случаи. Все отчёты<br> можно посмотреть в соответствующем разделе.</p>
+          <div class="col-xxl-5">
+            <p class="text">Ниже можно ознакомиться с некоторыми отчётами по проверенным<br class="d-sm-none d-xxl-block"> нами авто. Для удобства мы разбили эти примеры по категориям<br class="d-sm-none d-xxl-block"> и в каждой разместили наиболее интересные случаи. Все отчёты<br class="d-sm-none d-xxl-block"> можно посмотреть в соответствующем разделе.</p>
           </div>
         </div>
       </div>
-      <div class="button-block">
+      <div class="button-block d-none d-xxl-block">
         <div class="row">
           <div class="col-8">
             <div class="button-group">
@@ -48,10 +49,20 @@
           </div>
         </div>
       </div>
-      <div class="carousel-block">
+      <div class="carousel-block d-xxl-none">
         <div class="row">
-          <div class="col">
-            Карусель
+          <div class="col">   
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><button class="button button--primary-active">Премиум-класс</button></div>
+                <div class="swiper-slide"><button class="button button--tag-active">Кроссоверы и джипы</button></div>
+                <div class="swiper-slide"><button class="button button--tag-active">Седаны</button></div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-scrollbar"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -64,11 +75,37 @@
           </div>
         </div>
       </div>
-    </section>
-  </main>
-</div>
+    </div>
+  </section>
+</main>
  
   <script src="js/vendor.min.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  centerInsufficientSlides: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+  </script>
 </body>
 </html>
