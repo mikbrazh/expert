@@ -63,6 +63,7 @@
 $padRight: 32px // Используется повторно
 .button
   position: relative
+  display: inline-block
   padding: 16px $padRight 16px 32px
 
   font-family: $Mulish500
@@ -70,6 +71,7 @@ $padRight: 32px // Используется повторно
   font-size: em(17px)
   border-radius: 32px
   cursor: pointer
+  user-select: none
   transition: $buttons
 
 .reports-section .button-group .button
@@ -101,6 +103,8 @@ $padRight: 32px // Используется повторно
   background-color: transparent
   color: $accent
   &:hover
+    color: $accent
+    background-color: transparent
     border: 1px solid $accent
   &:active
     color: $milk
@@ -109,6 +113,44 @@ $padRight: 32px // Используется повторно
 
 .button--tag-inactive
   display: none
+
+.button--secondary-active
+  border: 1px solid $accent
+  background-color: transparent
+  color: $accent
+  &:hover
+    color: $accent
+    background-color: $milk
+    border: 1px solid $milk
+  &:active
+    color: $milk
+    background-color: $accent
+    border: 1px solid $accent
+
+.button--secondary-inactive
+  padding-right: calc(#{$padRight} + 24px)
+  border: 1px solid $darkGrey
+  background-color: transparent
+  color: $darkGrey
+  pointer-events: none
+  user-select: none
+
+  &:after
+    content: ''
+    position: absolute
+    bottom: 50%
+    right: 24px
+    transform: translateY(50%)
+    width: 24px
+    height: 24px
+
+    // background-image: url(../img/svg/arrow-icon--accent.svg)
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAyNiAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNS41SDI1TTI1IDUuNUwyMCAxTTI1IDUuNUwyMCAxMCIgc3Ryb2tlPSIjOEE4QTk5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==)
+    background-size: 100%
+    background-position: center
+    background-repeat: no-repeat
+
+    transition: $buttons
 
 .button--smile-icon
   padding-right: calc(#{$padRight} + 24px)
@@ -163,7 +205,42 @@ $padRight: 32px // Используется повторно
 
 // Карусель карточек
 .card
-  padding: 0 20px 24px 20px
+  width: 320px
+  height: 400px
+  overflow: hidden
+  background-color: $temp
+  border-radius: 32px
+  border: 1px solid $lightGrey
+  box-shadow: 0px 24px 48px 2px rgba(39, 47, 58, 0.05)
+
+.card__top
+  width: 100%
+  height: 200px
+  // background-color: lighten($temp, 10%)
+  background-image: url(../img/@2x/2014-rolls-royce-wraith@2x.jpg)
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+
+.card__bottom
+  background-color: $milk
+  // background-color: $temp
+  padding: 16px 20px 24px 20px
+
+.card__brand
+  margin-bottom: 30px
+  font-family: $Mulish600
+  font-weight: 600
+  font-size: em(18px)
+  color: $vulcan
+
+.card__mileage
+  margin-bottom: 24px
+  font-family: $Mulish400
+  font-weight: 400
+  font-size: em(16px)
+  color: $darkGrey
+
 
 
 
