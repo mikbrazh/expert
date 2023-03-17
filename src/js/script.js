@@ -1,34 +1,25 @@
-(function () {
+// Отслеживание медиа-запросов
+// (function () {
+//   // Создаем список медиа-запросов
+//   const mediaQueryList = window.matchMedia('(min-width: 0) and (max-width: 1503.98px)');
 
-  // const carousel = document.querySelector('.carousel');
-  // const carouselWrapper = document.querySelector('.carousel-wrapper');
-  // const mediaQuery = window.matchMedia('(max-width: 1503.98px)');
+//   // Колбэк функция (обработчик событий)
+//   function handleWidthChange(mql) {
+//     const carousel = document.querySelector('.carousel');
+//     const carouselWrapper = document.querySelector('.carousel-wrapper');
 
-  // if (mediaQuery.matches) {
-  //   carousel.classList.toggle('swiper');
-  //   carouselWrapper.classList.toggle('swiper-wrapper');
-  // }
-
-
-// function handleTabletChange(e) {
-//   if (e.matches) {
-//     carousel.classList.add('swiper');
-//     carouselWrapper.classList.add('swiper-wrapper');
+//     if (mql.matches) {
+//       carousel.classList.add('swiper');
+//       carouselWrapper.classList.add('swiper-wrapper')
+//     }
+//     else {
+//       carousel.classList.remove('swiper');
+//       carouselWrapper.classList.remove('swiper-wrapper')
+//     }
 //   }
-// }
-// mediaQuery.addListener(handleTabletChange);
-// handleTabletChange(mediaQuery);
+//   // Запускаем обработчик событий
+//   handleWidthChange(mediaQueryList);
 
-const mediaQueryList = window.matchMedia("screen and (min-width: 600px)");
-
-mediaQueryList.addEventListener('change', foo);
-foo(mediaQuery);
-
-function activateSwiper(mq) {
-  const carousel = document.querySelector('.carousel');
-  const carouselWrapper = document.querySelector('.carousel-wrapper');
-  const mediaQuery = window.matchMedia('(max-width: 1503.98px)');
-    document.body.style.backgroundColor = mq.matches ? '#f00' : '#060';
-}
-
-})();
+//   // Добавляем колбэк функцию в качестве прослушивателя событий в список запросов
+//   mediaQueryList.addEventListener('change', handleWidthChange);
+// })();

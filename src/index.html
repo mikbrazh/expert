@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<main>
+<!-- <main>
   <section class="reports-section">
     <div class="container">
       <header class="header-block">
@@ -34,8 +34,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="button-block d-none d-xxl-block"> -->
-      <div class="button-block d-none">
+      <div class="button-block d-none d-xxl-block">
         <div class="row">
           <div class="col-8">
             <div class="button-group">
@@ -50,14 +49,11 @@
           </div>
         </div>
       </div>
-      <!-- <div class="carousel-block d-xxl-none"> -->
-      <div class="carousel-block">
+      <div class="carousel-button-block d-xxl-none">
         <div class="row">
           <div class="col">   
-            <!-- <div class="swiper"> -->
-            <div class="carousel">
-              <!-- <div class="swiper-wrapper"> -->
-              <div class="carousel-wrapper">
+            <div class="swiper-buttons swiper">
+              <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <button class="button button--primary-active">Премиум-класс</button>
                 </div>
@@ -69,7 +65,8 @@
                 </div>
                 <div class="swiper-slide">
                   <button class="button button--tag-active">Купе и хэтчбеки</button>
-                </div><br class="d-inline">
+                </div>
+                <br class="d-none d-xxl-inline">
                 <div class="swiper-slide">
                   <button class="button button--tag-active">Коммерческий транспорт</button>
                 </div>
@@ -80,10 +77,6 @@
                   <button class="button button--tag-active button--smile-icon">Эксклюзив</button>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-scrollbar"></div>
             </div>
           </div>
         </div>
@@ -99,35 +92,49 @@
       </div>
     </div>
   </section>
-</main>
+</main> -->
+
+  <div class="carousel-cards-block">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card__top"></div>
+          <div class="card__bottom">
+            <dl class="card__description">
+              <dt class="card__brand">2014 Rolls-Royce Wraith</dt>
+              <dd class="card__mileage">17 750 км</dd>
+            </dl>
+            <a href="#" class="button button--tag-active button--arrow-icon">Смотреть отчёт</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
  
   <script src="js/vendor.min.js"></script>
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 
   <script>
-    const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  centerInsufficientSlides: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+    const swiper = new Swiper('.swiper-buttons', {
+      // Optional parameters
+      direction: 'horizontal',
+      spaceBetween: 12,
+      slidesPerView: 'auto',
+      // centeredSlides: true,
+      // spaceBetween: -120,
+      // freeMode: true,
+      // centeredSlides: true
+      // freeMode: {
+      //   enabled: true,
+      //   sticky: true,
+      // },
+      // loop: true,
+      // centerInsufficientSlides: true,
+  });
   </script>
 </body>
 </html>

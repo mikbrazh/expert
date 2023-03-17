@@ -1,8 +1,9 @@
-// Вендорные миксины (для _media.sass)
+// Вендорные миксины
+// Миксины Бутстрапа для _media.sass (порядок именно такой)
 @import "../libs/bootstrap-5.2.3/scss/functions"
 @import "../libs/bootstrap-5.2.3/scss/variables"
 @import "../libs/bootstrap-5.2.3/scss/mixins"
-@import "_mixins/emizer"
+@import "_mixins/emizer" // Перевод px в em
 
 // Кастомный импорт
 @import "fonts"
@@ -27,6 +28,12 @@ button
   background: transparent
 
 // Дефолтный SASS
+body // Центрирование для верстки компонентов (temp)
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100vh
+
 ::placeholder
   color: $milk
 
@@ -101,12 +108,3 @@ body
 // Кастомный SASS
 @import "_sections/report-section"
 @import "media" // Всегда в конце
-
-.swiper-slide
-  display: inline-block
-  margin-right: 12px
-  width: auto
-  &:first-child
-    margin-bottom: 12px
-  &:last-child
-    margin-right: 0
