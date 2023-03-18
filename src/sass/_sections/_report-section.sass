@@ -200,15 +200,16 @@ $padRight: 32px // Используется повторно
   margin-bottom: 64px
 
 // Кастомные свойства для Свайпера
-.swiper-slide
+.swiper-slide.swiper-slide--button
   width: auto !important
 
 // Карусель карточек
+.carousel-cards-block
+  margin-bottom: 64px
+
 .card
-  width: 320px
-  height: 400px
+  margin-bottom: 32px
   overflow: hidden
-  background-color: $temp
   border-radius: 32px
   border: 1px solid $lightGrey
   box-shadow: 0px 24px 48px 2px rgba(39, 47, 58, 0.05)
@@ -216,15 +217,14 @@ $padRight: 32px // Используется повторно
 .card__top
   width: 100%
   height: 200px
-  // background-color: lighten($temp, 10%)
-  background-image: url(../img/@2x/2014-rolls-royce-wraith@2x.jpg)
-  background-size: cover
-  background-position: center
-  background-repeat: no-repeat
+
+.card__image
+  display: block
+  width: 100%
+  height: 100%
 
 .card__bottom
   background-color: $milk
-  // background-color: $temp
   padding: 16px 20px 24px 20px
 
 .card__brand
@@ -241,11 +241,26 @@ $padRight: 32px // Используется повторно
   font-size: em(16px)
   color: $darkGrey
 
+.swiper-pagination-bullets
+  display: flex
+  align-items: center
+  justify-content: center
 
+.swiper-pagination-bullet
+  display: inline-block
+  margin-right: 10px
+  width: 5px
+  height: 5px
+  background-color: $grey
+  border-radius: 50%
+  &:last-child
+    margin-right: 0
 
-
-
-
+.swiper-pagination-bullet-active
+  width: 26px
+  height: 8px
+  border-radius: 30px
+  background-color: $accent
 
 .reports-section .view-reports-wrapper
   text-align: right

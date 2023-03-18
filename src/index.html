@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<!-- <main>
+<main>
   <section class="reports-section">
     <div class="container">
       <header class="header-block">
@@ -54,29 +54,82 @@
           <div class="col">   
             <div class="swiper-buttons swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--primary-active">Премиум-класс</button>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--tag-active">Кроссоверы и джипы</button>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--tag-active">Седаны</button>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--tag-active">Купе и хэтчбеки</button>
                 </div>
                 <br class="d-none d-xxl-inline">
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--tag-active">Коммерческий транспорт</button>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--tag-active">Мототехника</button>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide swiper-slide--button">
                   <button class="button button--tag-active button--smile-icon">Эксклюзив</button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-cards-block d-xxl-none">
+        <div class="row">
+          <div class="col">
+            <div class="swiper-cards swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card">
+                    <div class="card__top">
+                      <img class="card__image" src="img/@2x/2014-rolls-royce-wraith@2x.jpg" alt="Автомобиль">
+                    </div>
+                    <div class="card__bottom">
+                      <dl class="card__description">
+                        <dt class="card__brand">2014 Rolls-Royce Wraith</dt>
+                        <dd class="card__mileage">17 750 км</dd>
+                      </dl>
+                      <a href="#" class="button button--secondary-active button--arrow-icon">Смотреть отчёт</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <div class="card__top">
+                      <img class="card__image" src="img/@2x/2019-tesla-model-x@2x.jpg" alt="Автомобиль">
+                    </div>
+                    <div class="card__bottom">
+                      <dl class="card__description">
+                        <dt class="card__brand">2019 Tesla Model X</dt>
+                        <dd class="card__mileage">35 349 км</dd>
+                      </dl>
+                      <a href="#" class="button button--secondary-active button--arrow-icon">Смотреть отчёт</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card">
+                    <div class="card__top">
+                      <img class="card__image" src="img/@2x/2019-bentley-continental-gt3@2x.jpg" alt="Автомобиль">
+                    </div>
+                    <div class="card__bottom">
+                      <dl class="card__description">
+                        <dt class="card__brand">2019 Bentley Continental GT 3</dt>
+                        <dd class="card__mileage">10 833 км</dd>
+                      </dl>
+                      <a href="#" class="button button--secondary-active button--arrow-icon">Смотреть отчёт</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -92,49 +145,27 @@
       </div>
     </div>
   </section>
-</main> -->
-
-  <div class="carousel-cards-block">
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <div class="card__top"></div>
-          <div class="card__bottom">
-            <dl class="card__description">
-              <dt class="card__brand">2014 Rolls-Royce Wraith</dt>
-              <dd class="card__mileage">17 750 км</dd>
-            </dl>
-            <a href="#" class="button button--secondary-active button--arrow-icon">Смотреть отчёт</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
+</main>
  
-  <script src="js/vendor.min.js"></script>
-  <script src="js/swiper-bundle.min.js"></script>
-  <script src="js/script.js"></script>
+<script src="js/vendor.min.js"></script>
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
 
-  <script>
-    const swiper = new Swiper('.swiper-buttons', {
-      // Optional parameters
-      direction: 'horizontal',
-      spaceBetween: 12,
-      slidesPerView: 'auto',
-      // centeredSlides: true,
-      // spaceBetween: -120,
-      // freeMode: true,
-      // centeredSlides: true
-      // freeMode: {
-      //   enabled: true,
-      //   sticky: true,
-      // },
-      // loop: true,
-      // centerInsufficientSlides: true,
+<script>
+  const swiperButtons = new Swiper('.swiper-buttons', {
+    direction: 'horizontal',
+    spaceBetween: 12,
+    slidesPerView: 'auto',
   });
-  </script>
+
+  const swiperCards = new Swiper('.swiper-cards', {
+    direction: 'horizontal',
+    loop: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+</script>
 </body>
 </html>
