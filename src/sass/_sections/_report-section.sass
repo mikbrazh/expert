@@ -1,6 +1,5 @@
 .reports-section
   padding-top: 140px
-  background-color: $milk
 
 .reports-section .header-block
   margin-bottom: 87px
@@ -204,11 +203,24 @@ $padRight: 32px // Используется повторно
   width: auto !important
 
 // Карусель карточек
-.carousel-cards-desktop-block, .carousel-cards-mobile-block
+.carousel-cards-desktop-block
+  position: relative
   margin-bottom: 64px
+  &:after
+    content: ''
+    position: absolute
+    top: 64px
+    left: 0
+    width: 1672px
+    height: 706px
+    background-image: url('../img/@2x/bg-tesla-model@2x.png')
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    opacity: 0.5
 
 .card
-  margin-bottom: 60px
+  margin-bottom: 92px
   overflow: hidden
   border-radius: 32px
   border: 1px solid $lightGrey
@@ -226,6 +238,8 @@ $padRight: 32px // Используется повторно
   height: 400px
 
 .swiper-cards-desktop
+  // position: relative
+  padding-top: 128px
   width: 1920px
 
 .card__top
@@ -257,12 +271,12 @@ $padRight: 32px // Используется повторно
 
 .swiper-pagination-bullets
   position: absolute
-  bottom: 28px
+  bottom: 64px
   left: 0
   display: flex
   align-items: center
   justify-content: center
-  width: 1504px
+  width: 100%
 
 .swiper-pagination-bullet
   display: inline-block
@@ -280,6 +294,9 @@ $padRight: 32px // Используется повторно
   border-radius: 30px
   background-color: $accent
 
+.view-reports-block
+  margin-bottom: 140px
+
 .reports-section .view-reports-wrapper
   text-align: right
 
@@ -287,43 +304,103 @@ $padRight: 32px // Используется повторно
   display: inline-block
   margin-right: 40px
 
-.swiper-button-next
+// Кнопки навигации Свайпера
+.swiper-cards-desktop__prev
   z-index: 1
   position: absolute
   top: 0
-  left: 40px
-  width: 20px
-  height: 20px
-  background-color: green
-  color: black
-
-.swiper-cards-desktop__prev
-  position: relative
-  z-index: 1
-  position: absolute
-  top: 50px
-  left: 0
+  right: 692px
   width: 64px
   height: 64px
   border: 1px solid $grey
   border-radius: 50%
   background-color: transparent
-  transition: $buttons
+  transition: $navButtons
   &:hover
     width: 146px
     height: 64px
     border-radius: 40px
+    // transform: translateX(-30px)
+    .swiper-cards-desktop__arrow-left-wrapper
+      width: 54px
+  &:active
+    border: 1px solid $accent
+    .swiper-cards-desktop__arrow-left path
+      stroke: $accent
 
-.swiper-cards-desktop__arrow-left
+.swiper-cards-desktop__next
+  z-index: 1
   position: absolute
+  top: 0
+  right: 522px
+  width: 146px
+  height: 64px
+  border: 1px solid $accent
+  border-radius: 40px
+  background-color: $accent
+  transition: $navButtons
+  &:hover
+    width: 64px
+    height: 64px
+    border-radius: 50%
+    transform: translateX(-30px)
+    .swiper-cards-desktop__arrow-right-wrapper
+      width: 24px
+    .swiper-cards-desktop__arrow-right
+      transform: translateX(-30px)
+  &:active
+    border: 1px solid $accent
+    background-color: transparent
+    .swiper-cards-desktop__arrow-right path
+      stroke: $accent
+
+.swiper-cards-desktop__arrow-left-wrapper
+  position: absolute
+  overflow: hidden
+  width: 24px
   top: 50%
   left: 50%
   transform: translate(-50%, -50%)
-  // &:hover
-    // transform: translate(20px 0)
+  transition: $navButtons
 
-svg:hover
-  & path
-    stroke: #f00
-    transform: translate(10px)
-    transition: $buttons
+.swiper-cards-desktop__arrow-right-wrapper
+  position: absolute
+  overflow: hidden
+  width: 54px
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  // transition: $navButtons
+
+.swiper-cards-desktop__prev--inactive
+  width: 146px
+  height: 64px
+  border: 1px solid $grey
+  border-radius: 40px
+  background-color: transparent
+  pointer-events: none
+  cursor: auto
+  .swiper-cards-desktop__arrow-left-wrapper
+    width: 54px
+
+.swiper-cards-desktop__next--inactive
+  width: 64px
+  height: 64px
+  border: 1px solid $grey
+  border-radius: 50%
+  background-color: transparent
+  pointer-events: none
+  cursor: auto
+  .swiper-cards-desktop__arrow-right-wrapper
+    width: 24px
+    .swiper-cards-desktop__arrow-right
+      transform: translateX(-30px)
+
+.swiper-scrollbar
+  height: 2px
+  background-color: $grey
+
+.swiper-scrollbar-drag
+  height: 2px
+  border-radius: 1px;
+  background-color: $accent
